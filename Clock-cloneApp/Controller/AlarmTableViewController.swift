@@ -29,13 +29,14 @@ class AlarmTableViewController: UITableViewController {
         arr = UserDefaults.standard.array(forKey: "arr") as? [String] ?? []
         label = UserDefaults.standard.array(forKey: "label") as? [String] ?? []
         isON = UserDefaults.standard.array(forKey: "isON") as? [Bool] ?? []
+        //1초마다 #selector 함수를 실행시키게 함
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     @objc func updateTime()
     {
-        let date = NSDate()                 // date에게 NSDate() 라는 클래스를 선언한다! -> 현재시간을 가져옴.
-        let formatter = DateFormatter()     // formatter에게 DateFormatter()이라는 클래스를 선언한다!
+        let date = NSDate()
+        let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         let timeCurrent = formatter.string(from: date as Date)
         formatter.dateFormat = "E"
@@ -109,6 +110,10 @@ extension AlarmTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.change = true
         index = indexPath.row
+        //애니매이션 사라지게 하기
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3){
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         performSegue(withIdentifier: "AlarmAdd", sender: self)
     }
     

@@ -31,7 +31,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
-                            <action selector="textChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="Ce8-fP-zh4"/>
+                            <action selector="textChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="NJt-7F-Ud0"/>
                         </connections>
                     </textField>
                     <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Qs-p7-cRd">

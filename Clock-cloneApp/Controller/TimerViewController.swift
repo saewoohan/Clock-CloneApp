@@ -16,11 +16,16 @@ class TimerViewController: UIViewController {
     var hour: [String] = []
     var minute: [String] = []
     var second: [String] = []
+    
+    //아래의 코드를 구조체 혹은 배열로 만들면 더 짧은 코드가 가능, 하지만 첫 클론앱이라 가독성을 높이기 위해 따로 떼서 사용함.
     var h: Int = 0
     var min: Int = 0
     var sec: Int = 0
+    
     var timer: DispatchSourceTimer?
+    
     var timeLeft = 0
+    
     var isStart = false
     var stop = false
 

@@ -20,7 +20,7 @@ class StopWatchViewController: UIViewController {
     var isStart: Bool = false
     var newStart: Bool = false
     var startTime = Date()
-    var timer: DispatchSourceTimer?
+    var timer: DispatchSourceTimer? //DispatchSourceTimer을 이용하면 일시정지 하기 쉬움.
     var time: [Double] = [0, 0, 0]
     
     

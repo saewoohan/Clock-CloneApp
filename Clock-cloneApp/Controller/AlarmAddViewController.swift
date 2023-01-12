@@ -22,20 +22,26 @@ class AlarmAddViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     weak var delegate: Alarm?
     let dayArray = ["일", "월", "화", "수", "목", "금", "토"]
+    
     //넘기는 요일
     var label: String = "안 함 >"
     var day: [Int] = []
     var hour: [String] = []
     var minute: [String] = []
+    
     //넘기는 시간
     var h: String = "00"
     var m: String = "00"
+    
     //넘기는 스위치
     var isON: Bool = true
+    
     //넘기는 텍스트
     var text: String = ""
+    
     //편집 인지 아닌지
     var change: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -84,6 +90,7 @@ class AlarmAddViewController: UIViewController {
             nextVC.delegate = self
         }
     }
+    
 }
 
 extension AlarmAddViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -167,6 +174,7 @@ extension AlarmAddViewController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             self.performSegue(withIdentifier: "identifier", sender: self)

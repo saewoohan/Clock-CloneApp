@@ -15,6 +15,8 @@ class WorldClockTableViewController: UITableViewController, SendDelegate {
 
     var city: String = ""
     var array: [String] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -22,11 +24,6 @@ class WorldClockTableViewController: UITableViewController, SendDelegate {
         
         array = UserDefaults.standard.array(forKey: "Array") as? [String] ?? []
         self.tableView?.register(UINib(nibName: "WorldClockTableViewCell", bundle: nil), forCellReuseIdentifier: "WorldClockCell")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
 
@@ -34,8 +31,9 @@ class WorldClockTableViewController: UITableViewController, SendDelegate {
         performSegue(withIdentifier: "segueIdentifier", sender: self)
     }
     
+    //편집 화면 만들기
     @IBAction func deleteButton(_ sender: UIButton) {
-
+            
             if self.tableView.isEditing {
                 sender.setTitle("편집", for: .normal)
                 
@@ -53,15 +51,15 @@ class WorldClockTableViewController: UITableViewController, SendDelegate {
     }
 
     
-    //protocol을 이용한 B->A 데이터 전달 방식
+    // MARK: - protocol을 이용한 B->A 데이터 전달 방식
+    
     func send(name: String) {
         array.append(name)
         UserDefaults.standard.set(array, forKey: "Array")
         tableView.reloadData()
     }
     
-    // MARK: - Navigation
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueIdentifier" {
             let nextVC = segue.destination as! WorldAddTableViewController
@@ -73,18 +71,15 @@ class WorldClockTableViewController: UITableViewController, SendDelegate {
 }
 
 extension WorldClockTableViewController {
-    // MARK: - Table view data source
-
-    //셀 높이
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
     
-    // 셀 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return array.count
     }
+    
+    //editingStyle에 따른 실행 코드
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             array.remove(at: indexPath.row)
@@ -95,15 +90,19 @@ extension WorldClockTableViewController {
             
         }
     }
+    
+    //각 index의 editingStyle을 설정.
+    
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
+    
     // Row Editable true
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    //각각의 셀 정보
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = (tableView.dequeueReusableCell(withIdentifier: "WorldClockCell", for: indexPath) as? WorldClockTableViewCell)
         else{
@@ -133,4 +132,5 @@ extension WorldClockTableViewController {
         self.array.insert(moveCell, at: destinationIndexPath.row)
         UserDefaults.standard.set(array, forKey: "Array")
     }
+    
 }

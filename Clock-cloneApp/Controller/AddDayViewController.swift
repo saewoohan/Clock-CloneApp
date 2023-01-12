@@ -12,6 +12,7 @@ class AddDayViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
    
     var array = [["일",0], ["월",0], ["화",0], ["수",0], ["목",0], ["금",0], ["토",0]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

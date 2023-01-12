@@ -27,19 +27,9 @@ class WorldAddTableViewController: UITableViewController {
         
 
         searchBar.delegate = self
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
         let charactor = Array(Set(self.array.map{ $0.first! })).sorted()[section]
         
         if self.searchBar.text?.isEmpty == true {
@@ -78,6 +68,7 @@ class WorldAddTableViewController: UITableViewController {
 
 extension WorldAddTableViewController: UISearchBarDelegate {
     
+    //키보드가 내려가게 하기.
     private func dissmissKeyboard() {
             searchBar.resignFirstResponder()
     }
