@@ -155,6 +155,7 @@
 #### 실행 영상
 
 <img src = "https://user-images.githubusercontent.com/112225610/222166035-58b0a370-9e22-43c2-a4ea-4bc0c447d91d.gif" width = "30%" height = "50%">
+<img src = "https://user-images.githubusercontent.com/112225610/222166790-1172c104-360c-4096-a76c-70824d284ea0.gif" width = "30%" height = "50%">
 
 
 ----
