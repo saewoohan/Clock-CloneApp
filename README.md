@@ -152,6 +152,11 @@
         }
     }
 
+#### 실행 영상
+
+<img src = "https://user-images.githubusercontent.com/112225610/222166035-58b0a370-9e22-43c2-a4ea-4bc0c447d91d.gif" width = "30%" height = "50%">
+
+
 ----
 
 
