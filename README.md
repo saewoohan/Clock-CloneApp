@@ -255,6 +255,10 @@ stopwatch와 마찬가지로 일시정지 기능을 구현하기 위해 Dispatch
         print(timeLeft)
     }
 
+
+#### 실행영상 
+
+<img src = "https://user-images.githubusercontent.com/112225610/222139285-16ff7588-3dc6-4329-8156-643c4a713626.gif" width = "30%" height = "50%">
 ----
 
 ## 5. 후기
