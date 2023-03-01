@@ -93,6 +93,10 @@
         UserDefaults.standard.set(array, forKey: "Array")
     }
     
+#### 실행 영상
+
+<img src = "https://user-images.githubusercontent.com/112225610/222162901-833dd3dc-a5b5-4f13-b102-a4c30e1654bd.gif" width = "30%" height = "50%">
+
 ----
 
 ## 2. Alarm ⏰ 
