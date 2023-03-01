@@ -193,7 +193,10 @@
         minuteLabel.text = String(format: "%02.0f", minute)
         
     }
-    
+
+#### 실행 영상 
+
+<img src = "https://user-images.githubusercontent.com/112225610/222139970-d45f9afa-fd9c-4feb-ab32-b30e252d71bf.gif" width = "30%" height = "50%">
 -----
 
 ## 4. Timer ⏲
